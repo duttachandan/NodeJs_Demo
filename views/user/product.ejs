@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../Layout/head') -%>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/blog.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <%- include('../Layout/header') -%>
+    <section class="cards-section">
+      <div class="container">
+        <div class="row">
+          <% for(items of data){ %>
+          <div class="col-33">
+            <a href="/blog/<%= items.id %>" class="card">
+              <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <% for(image of items.image){ %>
+                  <div class="swiper-slide">
+                    <div class="card-img">
+                      <img src="<%=image%>" alt="" />
+                    </div>
+                  </div>
+                  <%} %>
+                </div>
+              </div>
+              <h2 class="title">
+                <%= items.title.split(" ").slice(0, 3).join(" ") %>...
+              </h2>
+              <div class="price"><%= items.price %></div>
+              <div class="location"><%= items.location %></div>
+            </a>
+          </div>
+          <% } %>
+        </div>
+      </div>
+    </section>
+    <%- include('../Layout/footer') -%>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".mySwiper", {
+        loop: true,
+      });
+    </script>
+  </body>
+</html>
