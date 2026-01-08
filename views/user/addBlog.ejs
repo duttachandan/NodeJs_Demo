@@ -2,12 +2,56 @@
 <html lang="en">
   <head>
     <%- include('../Layout/head') -%>
-    <title><%= title %></title>
   </head>
   <body>
     <%- include('../Layout/header') -%>
     <section class="form-section">
-      <form action=""></form>
+      <div class="container">
+        <form
+          class="form-check"
+          method="POST"
+          action="/createblog?_method=POST"
+          enctype="multipart/form-data"
+        >
+          <input
+            type="text"
+            name="title"
+            id="title"
+            placeholder="Put title over here"
+          />
+          <br />
+          <textarea
+            name="description"
+            id="description"
+            placeholder="Enter Description over here"
+          ></textarea>
+          <br />
+          <input type="file" name="image" id="image" multiple />
+          <br />
+          <input
+            type="number"
+            name="price"
+            id="price"
+            placeholder="Enter the Price of one day"
+          />
+          <br />
+          <input
+            type="text"
+            name="location"
+            id="location"
+            placeholder="put the location "
+          />
+          <br />
+          <input
+            type="text"
+            name="country"
+            id="country"
+            placeholder="Mention Your Country"
+          />
+          <br />
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
     </section>
     <%- include('../Layout/footer') -%>
   </body>

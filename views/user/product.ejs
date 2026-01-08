@@ -2,9 +2,7 @@
 <html lang="en">
   <head>
     <%- include('../Layout/head') -%>
-    <title><%= title %></title>
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/blog.css" />
+    <link rel="stylesheet" href="/css/blog.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
@@ -30,7 +28,7 @@
                 </div>
               </div>
               <h2 class="title">
-                <%= items.title.split(" ").slice(0, 3).join(" ") %>...
+                <%= items.title?.split(" ")?.slice(0, 3)?.join(" ") %>...
               </h2>
               <div class="price"><%= items.price %></div>
               <div class="location"><%= items.location %></div>

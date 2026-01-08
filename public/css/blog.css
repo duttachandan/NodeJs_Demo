@@ -2,8 +2,14 @@
   padding: 100px 0;
 }
 
+.cards-section .row {
+  align-items: stretch;
+  row-gap: 20px;
+}
+
 .card {
   width: 100%;
+  height: 100%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   padding: 10px;
   border-radius: 10px;
