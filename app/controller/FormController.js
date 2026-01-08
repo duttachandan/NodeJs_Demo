@@ -1,31 +1,29 @@
 const express = require("express");
 const rotuer = express.Router();
 const Blog = require("../models/BlogSchema");
+// const cloudinary = require("cloudinary").v2;
 
 class FormController {
   async createBlog(req, res) {
-    console.log(req.files);
     try {
-      const images = req.files.map((file) => ({
-        filename: file.filename,
-        originalname: file.originalname,
-        path: file.path,
-        mimetype: file.mimetype,
-        size: file.size,
-      }));
+      const { title, description, price, location, country } = req.body;
 
-      // console.log(images);
-
-      const data = await Blog.insertOne({
-        title: req.body.title,
-        description: req.body.description,
-        images: images,
-        price: req.body.price,
-        location: req.body.location,
-        country: req.body.location,
+      const blogdata = new Blog({
+        title,
+        description,
+        price,
+        location,
+        country,
       });
 
+      if (req.file) {
+        blogdata.image = req.file.path;
+      }
+
+      const data = await blogdata.save();
       console.log(data);
+
+      return res.redirect("/blog");
     } catch (e) {
       console.log(e);
     }

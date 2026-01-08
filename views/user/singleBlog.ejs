@@ -11,7 +11,7 @@
     <%- include('../Layout/header') -%>
     <section class="singleBlog-section">
       <div class="container">
-        <div class="swiper mySwiper">
+        <!-- <div class="swiper mySwiper">
           <div class="swiper-wrapper">
             <% for(image of data[0].image){ %>
             <div class="swiper-slide">
@@ -21,8 +21,9 @@
             </div>
             <%} %>
           </div>
-        </div>
-        <%= data.title %>
+        </div> -->
+        <div class="card-img"><img src="<%= data.image %>" alt="" /></div>
+        <div><%= data.title %></div>
       </div>
     </section>
     <%- include('../Layout/footer') -%>

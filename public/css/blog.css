@@ -25,3 +25,29 @@
 .mySwiper {
   border-radius: 10px;
 }
+
+.form-section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-check {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 20px 10px;
+  margin-bottom: 10px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+}

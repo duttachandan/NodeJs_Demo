@@ -5,6 +5,8 @@ const methodOverride = require("method-override");
 // const bodyParser = require("body-parser");
 const getProduct = require("./app/routes/getProduct");
 const dataBase = require("./app/config/MongoConnect");
+
+
 const app = express();
 const PORT = 8002 || process.env.PORT;
 
@@ -13,6 +15,8 @@ app.set("views", path.join(__dirname, "views"));
 dataBase();
 
 app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "uploads")));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 // app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));

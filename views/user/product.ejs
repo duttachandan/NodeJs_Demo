@@ -16,7 +16,7 @@
           <% for(items of data){ %>
           <div class="col-33">
             <a href="/blog/<%= items.id %>" class="card">
-              <div class="swiper mySwiper">
+              <!-- <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
                   <% for(image of items.image){ %>
                   <div class="swiper-slide">
@@ -26,6 +26,9 @@
                   </div>
                   <%} %>
                 </div>
+              </div> -->
+              <div class="card-img">
+                <img src="<%= items.image %>" alt="" />
               </div>
               <h2 class="title">
                 <%= items.title?.split(" ")?.slice(0, 3)?.join(" ") %>...

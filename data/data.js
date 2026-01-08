@@ -1,12 +1,12 @@
-const Person = require("../schema/Person");
+const models = require("../app/models/BlogSchema");
 const dummyData = require("./dummyData");
-const MongoConnect = require("../db/MongoConnect");
+const MongoConnect = require("../app/config/MongoConnect");
 
 MongoConnect();
 
 const dataInsert = async () => {
-//   await Person.deleteMany({});
-  await Person.insertMany(dummyData.data);
+  await models.deleteMany({});
+  // await models.insertMany(dummyData.data);
 };
 
 dataInsert();
