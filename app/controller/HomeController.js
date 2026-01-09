@@ -40,7 +40,10 @@ class HomeController {
   async SingleBlog(req, res) {
     try {
       const data = await Blog.find({ _id: req.params.id });
-      console.log(data);
+      console.log({
+        title: data[0].title,
+        data,
+      });
       res.render("user/singleBlog", {
         title: data[0].title,
         data,
